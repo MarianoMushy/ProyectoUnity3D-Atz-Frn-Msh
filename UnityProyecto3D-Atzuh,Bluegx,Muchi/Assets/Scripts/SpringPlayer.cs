@@ -48,7 +48,7 @@ public class SpringPlayer : MonoBehaviour
         while (Time.time < startTime + pushTime)
         {
             //moveScript.controller.Move(moveScript.moveDir * -pushSpeed * Time.deltaTime);
-            moveScript.Jump();
+            moveScript.Jump(pushSpeed);
 
             yield return null;
         }

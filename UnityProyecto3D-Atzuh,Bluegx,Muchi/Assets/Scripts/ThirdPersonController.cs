@@ -26,7 +26,7 @@ public class ThirdPersonController : MonoBehaviour
 
     public Vector3 moveDir;
 
-
+    public float salto = 1;
 
 
     private void Update()
@@ -56,7 +56,7 @@ public class ThirdPersonController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            Jump();
+            Jump(salto);
         }
 
 
@@ -64,9 +64,9 @@ public class ThirdPersonController : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    public void Jump()
+    public void Jump(float salto)
     {
-        velocity.y = Mathf.Sqrt(jump * -2.0f * gravity);
+        velocity.y = Mathf.Sqrt(jump * -2.0f * gravity) * salto;
     }
 
 }
