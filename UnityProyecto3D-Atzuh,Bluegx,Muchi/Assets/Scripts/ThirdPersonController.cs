@@ -56,12 +56,17 @@ public class ThirdPersonController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jump * -2.0f * gravity);
+            Jump();
         }
 
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    public void Jump()
+    {
+        velocity.y = Mathf.Sqrt(jump * -2.0f * gravity);
     }
 
 }

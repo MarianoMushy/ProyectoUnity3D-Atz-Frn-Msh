@@ -8,6 +8,7 @@ TagManager:
   - Cube
   - Sphere
   - Sumo
+  - Spring
   layers:
   - Default
   - TransparentFX
