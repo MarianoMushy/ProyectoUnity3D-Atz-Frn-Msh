@@ -28,10 +28,10 @@ public class ThirdPersonController : MonoBehaviour
 
     public float salto = 1;
 
-    private float coyoteTime = 0.2f;
+    private float coyoteTime = 0.14f;
     private float coyoteTimeCounter;
 
-    private float jumpBufferTime = 0.2f;
+    private float jumpBufferTime = 0.16f;
     private float jumpBufferCounter;
 
 
