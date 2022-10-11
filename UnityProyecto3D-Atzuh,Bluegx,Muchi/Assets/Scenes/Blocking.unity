@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SackBoy NPC (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 613920924916064258, guid: 4e8d3ef861c006f4aa894ad4426fbfcb,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 373968221}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e8d3ef861c006f4aa894ad4426fbfcb, type: 3}
 --- !u!1 &32980370
@@ -594,12 +599,12 @@ PrefabInstance:
     - target: {fileID: 6326920792296582412, guid: 53bba01171eed4e43a958d5f22868c8f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000018622265
+      value: 0.000000018622265
       objectReference: {fileID: 0}
     - target: {fileID: 6326920792296582412, guid: 53bba01171eed4e43a958d5f22868c8f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004825514
+      value: -0.000000004825514
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53bba01171eed4e43a958d5f22868c8f, type: 3}
