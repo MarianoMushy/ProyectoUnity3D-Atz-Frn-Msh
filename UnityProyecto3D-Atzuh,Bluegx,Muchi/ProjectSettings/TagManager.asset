@@ -9,6 +9,8 @@ TagManager:
   - Sphere
   - Sumo
   - Spring
+  - Talk
+  - GameManager
   layers:
   - Default
   - TransparentFX
