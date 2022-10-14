@@ -11,6 +11,7 @@ TagManager:
   - Spring
   - Talk
   - GameManager
+  - DeathZone
   layers:
   - Default
   - TransparentFX
