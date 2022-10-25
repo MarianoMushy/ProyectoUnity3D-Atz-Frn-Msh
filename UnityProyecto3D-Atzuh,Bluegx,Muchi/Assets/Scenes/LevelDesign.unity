@@ -25098,6 +25098,11 @@ PrefabInstance:
       propertyPath: dialoguito.Array.data[0].palabras
       value: Hola grenias
       objectReference: {fileID: 0}
+    - target: {fileID: 613920924916064258, guid: 4e8d3ef861c006f4aa894ad4426fbfcb,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 330585546}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e8d3ef861c006f4aa894ad4426fbfcb, type: 3}
 --- !u!1 &1838424753
@@ -32833,12 +32838,12 @@ PrefabInstance:
     - target: {fileID: 6326920791558386489, guid: 53bba01171eed4e43a958d5f22868c8f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016802048
+      value: -0.000000016802051
       objectReference: {fileID: 0}
     - target: {fileID: 6326920791558386489, guid: 53bba01171eed4e43a958d5f22868c8f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000003708184
+      value: 0.0000000037081844
       objectReference: {fileID: 0}
     - target: {fileID: 6326920792296582412, guid: 53bba01171eed4e43a958d5f22868c8f,
         type: 3}

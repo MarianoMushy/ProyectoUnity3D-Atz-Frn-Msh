@@ -34,6 +34,14 @@ public class ThirdPersonController : MonoBehaviour
     private float jumpBufferTime = 0.16f;
     private float jumpBufferCounter;
 
+    //AnimacionesTest
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = transform.GetChild(0).GetComponent<Animator>();
+    }
+
 
     private void Update()
     {
@@ -70,6 +78,9 @@ public class ThirdPersonController : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
+            //animtest
+            anim.SetBool("Run", true);
+
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
@@ -77,6 +88,10 @@ public class ThirdPersonController : MonoBehaviour
             
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+        else
+        {
+            anim.SetBool("Run", false);
         }
 
         if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f)
