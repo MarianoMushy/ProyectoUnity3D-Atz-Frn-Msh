@@ -21,6 +21,7 @@ public class SpringPlayer : MonoBehaviour
         if (other.tag == "Spring")
         {
             spring = true;
+            
         }
     }
 
@@ -36,6 +37,7 @@ public class SpringPlayer : MonoBehaviour
     {
         if (spring == true)
         {
+            
             StartCoroutine(Push());
 
         }
@@ -47,9 +49,14 @@ public class SpringPlayer : MonoBehaviour
 
         while (Time.time < startTime + pushTime)
         {
-            //moveScript.controller.Move(moveScript.moveDir * -pushSpeed * Time.deltaTime);
-            moveScript.Jump(pushSpeed);
+            if(spring == true)
+            {
+                moveScript.Jump(pushSpeed);
+                spring = false;
+            }
+            
 
+            
             yield return null;
         }
     }

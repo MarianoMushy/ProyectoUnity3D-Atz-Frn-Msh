@@ -34,11 +34,14 @@ public class ThirdPersonController : MonoBehaviour
     private float jumpBufferTime = 0.16f;
     private float jumpBufferCounter;
 
+    public GameObject footstep;
+
     //AnimacionesTest
     private Animator anim;
 
     private void Awake()
     {
+        footstep.SetActive(false);
         anim = transform.GetChild(0).GetComponent<Animator>();
     }
 
@@ -64,6 +67,7 @@ public class ThirdPersonController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            
             jumpBufferCounter = jumpBufferTime;
         }
         else
@@ -88,9 +92,11 @@ public class ThirdPersonController : MonoBehaviour
             
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            footsteps();
         }
         else
         {
+            StopFootsteps();
             anim.SetBool("Run", false);
         }
 
@@ -111,7 +117,18 @@ public class ThirdPersonController : MonoBehaviour
 
     public void Jump(float salto)
     {
+        anim.SetTrigger("Jump");
         velocity.y = Mathf.Sqrt(jump * -2.0f * gravity) * salto;
+    }
+
+    void footsteps()
+    {
+        footstep.SetActive(true);
+    }
+
+    void StopFootsteps()
+    {
+        footstep.SetActive(false);
     }
 
 }
