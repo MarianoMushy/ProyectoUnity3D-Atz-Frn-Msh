@@ -10,7 +10,7 @@ public class Talk : MonoBehaviour
 
     public Dialogue[] dialoguito;
 
-    public TextMeshProUGUI nombrex;
+    //public TextMeshProUGUI nombrex;
 
     public TextMeshProUGUI palabrasx;
 
@@ -24,6 +24,10 @@ public class Talk : MonoBehaviour
 
     public float delay;
 
+    public int charsToPlaySound;
+
+    public GameObject pressEscreen;
+
     private void Start()
     {
         linea = 0;
@@ -34,6 +38,7 @@ public class Talk : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            pressEscreen.SetActive(true);
             check = true;
         }
     }
@@ -42,10 +47,13 @@ public class Talk : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            
+            pressEscreen.SetActive(false);
+
             StopCoroutine(mostrarTexto(""));
             check = false;
             DialogoBox.SetActive(false);
-            nombrex.text = "";
+            //nombrex.text = "";
             palabrasx.text = "";
             DialogoBox.SetActive(false);
             linea = 0;
@@ -56,10 +64,10 @@ public class Talk : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && check && check2 && linea < dialoguito.Length)
         {
-
+            pressEscreen.SetActive(false);
             DialogoBox.SetActive(true);
             
-            nombrex.text = dialoguito[linea].nombre;
+            //nombrex.text = dialoguito[linea].nombre;
 
             StartCoroutine(mostrarTexto(dialoguito[linea].palabras));
 
@@ -69,7 +77,7 @@ public class Talk : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.E) && check && check2 && linea >= dialoguito.Length)
         {
-            nombrex.text = "";
+            //nombrex.text = "";
             palabrasx.text = "";
             DialogoBox.SetActive(false);
             linea = 0;
@@ -78,10 +86,19 @@ public class Talk : MonoBehaviour
 
     IEnumerator mostrarTexto(string textos)
     {
+        int charIndex = 0;
+
         for (int i = 0; i <= textos.Length; i++)
         {
             currentText = textos.Substring(0, i);
             palabrasx.text = currentText;
+
+            if (charIndex % charsToPlaySound == 0)
+            {
+                AudioManager.Instance.Play("Type");
+            }
+
+            charIndex++;
             yield return new WaitForSeconds(delay);
         }
 

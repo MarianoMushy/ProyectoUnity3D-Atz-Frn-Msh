@@ -20,6 +20,7 @@ public class SpringPlayer : MonoBehaviour
     {
         if (other.tag == "Spring")
         {
+            AudioManager.Instance.Play("Spring");
             spring = true;
             
         }
@@ -37,9 +38,7 @@ public class SpringPlayer : MonoBehaviour
     {
         if (spring == true)
         {
-            
             StartCoroutine(Push());
-
         }
     }
 
@@ -49,14 +48,9 @@ public class SpringPlayer : MonoBehaviour
 
         while (Time.time < startTime + pushTime)
         {
-            if(spring == true)
-            {
-                moveScript.Jump(pushSpeed);
-                spring = false;
-            }
-            
 
-            
+            moveScript.Jump(pushSpeed);
+             
             yield return null;
         }
     }
