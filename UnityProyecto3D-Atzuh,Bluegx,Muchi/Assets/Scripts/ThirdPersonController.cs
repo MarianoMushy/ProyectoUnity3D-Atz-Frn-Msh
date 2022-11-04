@@ -58,10 +58,13 @@ public class ThirdPersonController : MonoBehaviour
 
         if ((isGrounded))
         {
+            anim.SetBool("Caida", false);
+
             coyoteTimeCounter = coyoteTime;
         }
         else
         {
+            anim.SetBool("Caida", true);
             coyoteTimeCounter -= Time.deltaTime;
         }
 
@@ -89,6 +92,7 @@ public class ThirdPersonController : MonoBehaviour
         {
             StopFootsteps();
             anim.SetBool("Run", false);
+           
         }
 
         if (direction.magnitude >= 0.1f)
