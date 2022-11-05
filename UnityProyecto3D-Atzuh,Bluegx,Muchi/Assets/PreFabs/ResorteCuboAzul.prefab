@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4345855881173911115}
   - component: {fileID: 4345855881173911108}
   - component: {fileID: 4345855881173911109}
+  - component: {fileID: 3721343107609886384}
   m_Layer: 0
   m_Name: ResorteCuboAzul
   m_TagString: Cube
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4345855881173911110}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.09, y: 1.42, z: -17.14}
   m_LocalScale: {x: 1.7783557, y: 1.7783557, z: 1.7783557}
   m_ConstrainProportionsScale: 0
@@ -64,6 +65,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickable: 1
+--- !u!114 &3721343107609886384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345855881173911110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5153d8cd7e69df24fa1b1b62411c8319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cuboPrefab: {fileID: 4345855881173911110}
+  PosisionV: {x: 0, y: 0, z: 0}
+  instanciado: 0
 --- !u!1 &4345855881302530210
 GameObject:
   m_ObjectHideFlags: 0

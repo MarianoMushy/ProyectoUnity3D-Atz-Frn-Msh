@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8980839003430815568}
   - component: {fileID: 8980839003430815569}
   - component: {fileID: 8980839003430815582}
+  - component: {fileID: 2072327650}
   m_Layer: 0
   m_Name: EsferaRojaKey
   m_TagString: Sphere
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8980839003430815583}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.83, y: 2.16, z: 0.64}
   m_LocalScale: {x: 2.5321205, y: 2.5321205, z: 2.5321205}
   m_ConstrainProportionsScale: 0
@@ -63,6 +64,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickable: 1
+--- !u!114 &2072327650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8980839003430815583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5153d8cd7e69df24fa1b1b62411c8319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cuboPrefab: {fileID: 8980839003430815583}
+  PosisionV: {x: 0, y: 0, z: 0}
+  instanciado: 0
 --- !u!1 &8980839004238999465
 GameObject:
   m_ObjectHideFlags: 0
