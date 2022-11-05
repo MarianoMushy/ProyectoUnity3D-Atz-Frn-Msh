@@ -9,7 +9,15 @@ public class DeathZone : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(ReloadScene());
         }
     }
+
+    IEnumerator ReloadScene()
+    {
+        ThirdPersonController.anim.SetTrigger("Die");
+        yield return new WaitForSeconds(.7f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

@@ -37,7 +37,7 @@ public class ThirdPersonController : MonoBehaviour
     public GameObject footstep;
 
     //AnimacionesTest
-    private Animator anim;
+    public static Animator anim;
 
     private void Awake()
     {
