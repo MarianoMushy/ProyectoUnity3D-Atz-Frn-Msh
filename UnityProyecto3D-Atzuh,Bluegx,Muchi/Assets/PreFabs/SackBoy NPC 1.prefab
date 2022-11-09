@@ -1229,7 +1229,7 @@ MonoBehaviour:
     caras: {fileID: 21300000, guid: b7052fcd4ef183542bd8889c41bbe704, type: 3}
   palabrasx: {fileID: 6098857808452486140}
   carasx: {fileID: 6098857809483690358}
-  delay: 0.1
+  delay: 0.05
   charsToPlaySound: 3
   pressEscreen: {fileID: 0}
 --- !u!1 &4041191753560792094

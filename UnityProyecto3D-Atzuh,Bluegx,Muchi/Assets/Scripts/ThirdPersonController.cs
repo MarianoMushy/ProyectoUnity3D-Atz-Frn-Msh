@@ -5,6 +5,7 @@ using UnityEngine;
 public class ThirdPersonController : MonoBehaviour
 {
     public CharacterController controller;
+    public PickUpObjects objeto;
     public Transform cam;
 
     public float turnSmoothTime = 0.1f;
@@ -39,12 +40,14 @@ public class ThirdPersonController : MonoBehaviour
     //AnimacionesTest
     public static Animator anim;
 
+   
+
     private void Awake()
     {
         footstep.SetActive(false);
         anim = transform.GetChild(0).GetComponent<Animator>();
     }
-
+    
 
     private void Update()
     {
@@ -53,6 +56,8 @@ public class ThirdPersonController : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+
+            
         }
 
 
@@ -83,16 +88,36 @@ public class ThirdPersonController : MonoBehaviour
 
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if (isGrounded && direction.magnitude >= 0.1f)
+
+        if(direction.magnitude == 0 && isGrounded && objeto.pickedObject == null)
+        {
+            anim.SetBool("IdleCarry", false);
+        }
+        else if(direction.magnitude == 0 && isGrounded && objeto.pickedObject != null)
+        {
+            anim.SetBool("IdleCarry", true);
+        }
+        
+
+        
+
+
+        if (isGrounded && direction.magnitude >= 0.1f && objeto.pickedObject == null)
         {
             anim.SetBool("Run", true);
+            footsteps();
+        }
+        else if (isGrounded && direction.magnitude >= 0.1f )
+        {
+            anim.SetBool("RunCarry", true);
             footsteps();
         }
         else
         {
             StopFootsteps();
             anim.SetBool("Run", false);
-           
+            anim.SetBool("RunCarry", false);
+
         }
 
         if (direction.magnitude >= 0.1f)
@@ -123,7 +148,16 @@ public class ThirdPersonController : MonoBehaviour
 
     public void Jump(float salto)
     {
-        anim.SetTrigger("Jump");
+
+        if(objeto.pickedObject == null)
+        {
+            anim.SetTrigger("Jump");
+        }
+        else
+        {
+            anim.SetTrigger("JumpCarry");
+        }
+        
         velocity.y = Mathf.Sqrt(jump * -2.0f * gravity) * salto;
     }
 
@@ -136,5 +170,5 @@ public class ThirdPersonController : MonoBehaviour
     {
         footstep.SetActive(false);
     }
-
+    
 }
