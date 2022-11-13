@@ -830,7 +830,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9c83399795d5327468c804f2d970edf3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9ee9ac3b8f3c0934389702e460e79677, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -876,7 +876,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3262,6 +3262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 9108995983297849210}
+  objeto: {fileID: 9108995983297849208}
   cam: {fileID: 0}
   turnSmoothTime: 0.1
   speed: 10.5

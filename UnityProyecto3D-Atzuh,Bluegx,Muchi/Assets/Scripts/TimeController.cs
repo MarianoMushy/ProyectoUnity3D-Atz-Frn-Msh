@@ -55,6 +55,9 @@ public class TimeController : MonoBehaviour
 
         sunriseTime = TimeSpan.FromHours(sunriseHour);
         sunsetTime = TimeSpan.FromHours(sunsetHour);
+
+
+        //currentTime = currentTime.AddHours(5); asi se puede controlar facilmente la hora
     }
 
     // Update is called once per frame
@@ -67,7 +70,8 @@ public class TimeController : MonoBehaviour
 
     private void UpdateTimeOfDay()
     {
-        currentTime = currentTime.AddSeconds(Time.deltaTime * timeMultiplier);
+        //currentTime = currentTime.AddSeconds(Time.deltaTime * timeMultiplier);
+        currentTime = DateTime.Now.Date + TimeSpan.FromHours(GameManager.instance.tiempoActual);
 
         if (timeText != null)
         {

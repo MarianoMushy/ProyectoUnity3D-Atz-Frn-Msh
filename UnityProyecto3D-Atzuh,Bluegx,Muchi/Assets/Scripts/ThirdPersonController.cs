@@ -139,6 +139,7 @@ public class ThirdPersonController : MonoBehaviour
 
         if (Input.GetButtonUp("Jump"))
         {
+
             coyoteTimeCounter = 0f;
         }
         
@@ -148,8 +149,8 @@ public class ThirdPersonController : MonoBehaviour
 
     public void Jump(float salto)
     {
-
-        if(objeto.pickedObject == null)
+        AudioManager.Instance.Play("Jump");
+        if (objeto.pickedObject == null)
         {
             anim.SetTrigger("Jump");
         }

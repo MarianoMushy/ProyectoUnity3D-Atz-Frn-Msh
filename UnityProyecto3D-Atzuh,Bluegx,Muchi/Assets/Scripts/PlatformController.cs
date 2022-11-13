@@ -24,6 +24,7 @@ public class PlatformController : MonoBehaviour
     {
         if (moveToTheNext)
         {
+            
             StopCoroutine(waitForMove(0));
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, platformPositions[nextPosition].position, platformSpeed * Time.deltaTime));
         }
@@ -31,12 +32,14 @@ public class PlatformController : MonoBehaviour
 
         if (Vector3.Distance(platformRB.position, platformPositions[nextPosition].position) <= 0)
         {
+            nextPosition = Random.Range(0, platformPositions.Length);
             StartCoroutine(waitForMove(waitTime));
             actualPosition = nextPosition;
-            nextPosition++;
+            //nextPosition++;
 
             if(nextPosition > platformPositions.Length -1)
             {
+                
                 nextPosition = 0;
             }
         }
