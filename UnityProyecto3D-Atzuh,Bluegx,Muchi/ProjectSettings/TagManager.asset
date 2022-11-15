@@ -12,6 +12,7 @@ TagManager:
   - Talk
   - GameManager
   - DeathZone
+  - CubePressure
   layers:
   - Default
   - TransparentFX

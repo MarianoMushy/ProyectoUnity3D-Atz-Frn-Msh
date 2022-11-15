@@ -6,7 +6,7 @@ public class Pressurepad : MonoBehaviour
 {
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Cube")
+        if(other.tag == "CubePressure")
         {
             Transform box = other.GetComponent<Transform>();
             float distance = Vector3.Distance(box.position, transform.position);
